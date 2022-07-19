@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 import SHOP_DATA from './shop.data';
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
@@ -26,4 +28,4 @@ class ShopPage extends React.Component {
     }
 }
 
-export default ShopPage;
+export default withRouter(ShopPage);
