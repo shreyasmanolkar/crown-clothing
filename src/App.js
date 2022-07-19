@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -48,9 +48,9 @@ class App extends React.Component{
       <div>
         <Header/>
         <Switch>
-          <Route exact path ='/' component={HomePage}/>
-          <Route path ='/shop' component={ShopPage}/>
-          <Route exact path ='/checkout' component={CheckoutPage}/>
+          <Route exact path='/' component={HomePage}/>
+          <Route path='/shop' component={ShopPage}/>
+          <Route exact path='/checkout' component={CheckoutPage}/>
           <Route 
             exact 
             path ='/signin'
@@ -76,7 +76,7 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user=>dispatch(setCurrentUser(user))
 });
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App));
+)(App);
